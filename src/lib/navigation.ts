@@ -1,14 +1,14 @@
 import type { Component } from 'svelte';
 import {
-	BookOpen,
-	ChartBar,
-	CompassTool,
-	DiamondsFour,
-	FlowArrow,
-	House,
-	Notepad,
-	RoadHorizon,
-	Stack
+	BookOpenIcon,
+	ChartBarIcon,
+	CompassToolIcon,
+	DiamondsFourIcon,
+	FlowArrowIcon,
+	HouseIcon,
+	NotepadIcon,
+	RoadHorizonIcon,
+	StackIcon
 } from 'phosphor-svelte';
 
 export type AppHref =
@@ -34,54 +34,54 @@ export const navItems: NavItem[] = [
 		href: '/',
 		label: 'Workspace Home',
 		description: 'Priority snapshot and next action',
-		icon: House
+		icon: HouseIcon
 	},
 	{
 		href: '/projects',
 		label: 'Projects',
 		description: 'Project lifecycle and scope',
-		icon: Stack
+		icon: StackIcon
 	},
 	{
 		href: '/blueprint',
 		label: 'Blueprint Studio',
 		description: 'Entity / action / rule modeling',
-		icon: CompassTool
+		icon: CompassToolIcon
 	},
 	{
 		href: '/readiness',
 		label: 'Skills',
 		description: 'Readiness and capability gap report',
-		icon: ChartBar
+		icon: ChartBarIcon
 	},
 	{
 		href: '/roadmap',
 		label: 'Roadmap',
 		description: 'Dependency-aware sequence',
-		icon: RoadHorizon
+		icon: RoadHorizonIcon
 	},
 	{
 		href: '/journal',
 		label: 'Journal',
 		description: 'Decision rationale and review notes',
-		icon: Notepad
+		icon: NotepadIcon
 	},
 	{
 		href: '/templates',
 		label: 'Templates',
 		description: 'Archetypes and implementation patterns',
-		icon: DiamondsFour
+		icon: DiamondsFourIcon
 	},
 	{
 		href: '/insights',
 		label: 'Insights',
 		description: 'Longitudinal growth and reflection',
-		icon: FlowArrow
+		icon: FlowArrowIcon
 	},
 	{
 		href: '/settings',
 		label: 'Settings',
 		description: 'Workspace and guidance preferences',
-		icon: BookOpen
+		icon: BookOpenIcon
 	}
 ];
