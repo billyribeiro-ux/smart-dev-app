@@ -1,27 +1,21 @@
 <script lang="ts">
 	import { createMutation } from '@tanstack/svelte-query';
 	import type { ReadinessAssessment } from '$lib/domain/ontology';
+	import { recomputeReadiness } from '$lib/remote/readiness.remote';
 	import { workspaceStore } from '$lib/stores/workspace';
 
 	const workspace = workspaceStore;
 	const recalculateMutation = createMutation(() => ({
 		mutationFn: async () => {
-			const payload = {
+			const payload: {
+				blueprint: typeof $workspace.blueprint;
+				skills: typeof $workspace.skills;
+			} = {
 				blueprint: $workspace.blueprint,
 				skills: $workspace.skills
 			};
-			const response = await fetch('/api/intelligence/readiness', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(payload)
-			});
-
-			if (!response.ok) {
-				throw new Error('Failed to recompute readiness');
-			}
-
-			const data = (await response.json()) as { readiness: ReadinessAssessment };
-			return data.readiness;
+			const readiness = (await recomputeReadiness(payload)) as ReadinessAssessment;
+			return readiness;
 		},
 		onSuccess: (readiness) => {
 			workspace.setReadiness(readiness);

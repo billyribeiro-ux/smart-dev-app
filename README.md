@@ -38,21 +38,21 @@ Serious planning and engineering-thinking workspace for transforming vague softw
 ## Development
 
 ```sh
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 ## Quality Gates
 
 ```sh
-npm run check
-npm run lint
-npm run test
+pnpm check
+pnpm lint
+pnpm test
 ```
 
 ## Production Build
 
 ```sh
-npm run build
-npm run preview
+pnpm build
+pnpm preview
 ```
