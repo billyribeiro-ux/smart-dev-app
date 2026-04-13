@@ -1,0 +1,31 @@
+{
+	"$schema": "https://schema.tauri.app/config/2",
+	"productName": "Smart Dev App",
+	"version": "0.1.0",
+	"identifier": "com.smartdev.desktop",
+	"build": {
+		"beforeDevCommand": "pnpm dev -- --host 127.0.0.1 --port 4173",
+		"devUrl": "http://127.0.0.1:4173",
+		"beforeBuildCommand": "pnpm build:desktop:web",
+		"frontendDist": "../build"
+	},
+	"app": {
+		"windows": [
+			{
+				"label": "main",
+				"title": "Smart Dev App",
+				"width": 1280,
+				"height": 840,
+				"resizable": true
+			}
+		],
+		"security": {
+			"csp": null
+		}
+	},
+	"bundle": {
+		"active": true,
+		"targets": "all",
+		"icon": []
+	}
+}

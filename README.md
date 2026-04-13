@@ -56,3 +56,21 @@ pnpm test
 pnpm build
 pnpm preview
 ```
+
+## macOS Desktop App (Tauri)
+
+Requirements:
+- Rust toolchain (`rustup`)
+- Xcode Command Line Tools (`xcode-select --install`)
+
+Run desktop app in development:
+
+```sh
+pnpm desktop:dev
+```
+
+Build a macOS app bundle:
+
+```sh
+pnpm desktop:build
+```
