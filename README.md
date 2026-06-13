@@ -60,6 +60,7 @@ pnpm preview
 ## macOS Desktop App (Tauri)
 
 Requirements:
+
 - Rust toolchain (`rustup`)
 - Xcode Command Line Tools (`xcode-select --install`)
 
